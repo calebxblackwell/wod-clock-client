@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+//these are the event listeners for the stopwatch click functions
+//they update the state when given an action.
 const formattedSeconds = (sec) =>
   Math.floor(sec / 60) +
     ':' +

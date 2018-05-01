@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-
-import Chrono from './components/chrono.js';
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import Chrono from './components/chrono.js'
 import './App.css';
+import { fetchPrograms } from './actions'
 
 class App extends Component {
   constructor(props){
@@ -11,14 +12,10 @@ class App extends Component {
       //as well as the api login info and test info will be defined
     }
   }
+componentDidMount() {
+  this.props.dispatch(fetchPrograms())
+}
 
-  
-  onClick(button){
-    this.setState({
-      //this is the part where when you log into the api, it'll
-      //get rid of this App component, and show Chrono.
-    })
-  }
   render() {
     return (
       <div className="App">
@@ -39,10 +36,15 @@ class App extends Component {
             Placeholder for API info for Wodify login screen
 
         </p>
+        <p className="App-workout">
+            WOD: {this.props.workout}
+        </p>
         <Chrono  />
       </div>
     );
   }
 }
-
-export default App;
+const mapStateToProps = (state) => ({
+  workout: state.program.workout
+})
+export default connect(mapStateToProps)(App);

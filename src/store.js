@@ -1,4 +1,10 @@
-import {createStore} from 'redux'
-import {trelloReducer} from './reducers';
+import {createStore, applyMiddleware } from 'redux'
+//import {trelloReducer} from './reducers';
+import rootReducer from './reducers'
+import thunk from 'redux-thunk'
 
-export default createStore(trelloReducer);
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+
+export default store

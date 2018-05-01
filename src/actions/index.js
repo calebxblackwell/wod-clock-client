@@ -13,7 +13,7 @@ const recieveWorkout = (workout) => ({
 
 export const fetchPrograms = () => {
   return (dispatch) => {
-    fetch('http://localhost:3000/api/programs')
+    fetch('http://localhost:8080/api/programs')
     .then(response => response.json())
     .then(json => dispatch(recieveWorkout(json.workout)))
   .catch((ex) => console.log('parsing failed', ex))

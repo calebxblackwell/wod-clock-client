@@ -12,7 +12,7 @@ class App extends Component {
       isVisible: true
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleRemount = this.handleRemount.bind(this);
+
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -23,14 +23,7 @@ class App extends Component {
     });
     return false;
   }
-  handleRemount(e) {
-    this.setState({
-      isVisible: true
-    }, function() {
-      console.log(this.state.isVisible)
-    });
-    e.preventDefault();
-  }
+
 componentDidMount() {
   this.props.dispatch(fetchPrograms())
 }

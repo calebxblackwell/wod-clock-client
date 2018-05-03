@@ -1,15 +1,18 @@
+import React from 'react';
+
+
+
 export const ADD_TIME = "ADD_TIME";
 export const action = {
   type: ADD_TIME,
 };
 
-
+//below is the info work recieving the workout info from the wodify api
 const RECIEVE_WORKOUT = 'RECIEVE_WORKOUT'
 const recieveWorkout = (workout) => ({
   type: RECIEVE_WORKOUT,
   workout
 })
-
 
 export const fetchPrograms = () => {
   return (dispatch) => {

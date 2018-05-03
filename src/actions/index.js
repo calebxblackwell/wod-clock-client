@@ -13,7 +13,7 @@ const recieveWorkout = (workout) => ({
 
 export const fetchPrograms = () => {
   return (dispatch) => {
-    fetch('http://localhost:8080/api/programs')
+    fetch('app.wodify.com/API/Programs_v1.aspx?apikey=FvunGgKZG43ArkOBAs8KoFrT4&type=json&encoding=utf-8')
     .then(response => response.json())
     .then(json => dispatch(recieveWorkout(json.workout)))
   .catch((ex) => console.log('parsing failed', ex))

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import Chrono from './components/chrono.js'
-import LoginScreen from './components/loginscreen.js'
+import LoginForm from './components/loginscreen.js'
+import Input from './components/input.js'
 import './App.css';
 import { fetchPrograms } from './actions'
 
@@ -14,6 +15,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
+
   handleSubmit(e) {
     e.preventDefault();
     this.setState({
@@ -34,7 +36,17 @@ componentDidMount() {
         <header className="App-header">
             <h1 className="App-title">WOD CLOCK</h1>
         </header>
-        <LoginScreen />
+        <div className="LoginScreen">
+          <h2> Welcome to WOD Clock! This is an app designed to make your Crossfit
+          workouts easier by providing your workout of the day information right
+          next to the stopwatch clock. No more white boards and watching the wall
+          clock for you!Please feel free to login to your gym's Wodify below or
+          use [info for test login] if you don't have a Crossfit Gym.
+          </h2>
+        </div>
+        
+        <LoginForm />
+
         <p className="App-login">
             Placeholder for API info for Wodify login screen
 

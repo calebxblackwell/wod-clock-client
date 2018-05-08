@@ -41,10 +41,10 @@ componentDidMount() {
           workouts easier by providing your workout of the day information right
           next to the stopwatch clock. No more white boards and watching the wall
           clock for you!Please feel free to login to your gym's Wodify below or
-          use [info for test login] if you don't have a Crossfit Gym.
+          use testuser and testpassword if you don't have a Crossfit Gym.
           </h2>
         </div>
-        
+
         <LoginForm />
 
         <p className="App-login">

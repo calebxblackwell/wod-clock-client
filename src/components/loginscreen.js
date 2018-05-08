@@ -32,7 +32,7 @@ class LoginForm extends Component {
       <div>
         <Input id ="username" labelName="Username: " inputType="text" parentFunction={this.setUsername}  />
         <Input id ="password" labelName="Password: " inputType="password" parentFunction={this.setPassword} />
-        <button onClick={this.clickHandler}>{this.props.buttonName}</button>
+        <button onClick={this.clickHandler}>{this.props.buttonName}Login</button>
       </div>
     )
   }

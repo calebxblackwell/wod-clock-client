@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import Chrono from './components/chrono.js'
-import LoginForm from './components/loginscreen.js'
-import Input from './components/input.js'
-import './App.css';
-import { fetchPrograms } from './actions'
-import Navbar from './components/navbar.js'
+import { Router, Route } from 'react-router-dom';
 
+import { history } from '../_helpers';
+import { alertActions } from '../_actions';
+import { PrivateRoute } from '../_components';
+import { HomePage } from '../HomePage';
+import { LoginForm } from './components/loginscreen.js';
+import {Chrono} from './components/chrono.js'
+import './App.css';
+import { fetchPrograms } from '/actions/index.js'
 
 class App extends Component {
   constructor(props){
@@ -15,6 +18,11 @@ class App extends Component {
       isVisible: true
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    const { dispatch } = this.props;
+      history.listen((location, action) => {
+          // clear alert on location change
+          dispatch(alertActions.clear());
+      });
 
   }
 
@@ -33,6 +41,7 @@ componentDidMount() {
 }
 
   render() {
+    const {alert} = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -45,8 +54,21 @@ componentDidMount() {
           clock for you!Please feel free to login to your gym's Wodify below or
           use testuser and testpassword if you don't have a Crossfit Gym.
           </h2>
+          <div className="container">
+                    <div className="col-sm-8 col-sm-offset-2">
+                        {alert.message &&
+                            <div className={`alert ${alert.type}`}>{alert.message}</div>
+                        }
+                        <Router history={history}>
+                            <div>
+                                <PrivateRoute exact path="/" component={HomePage} />
+                                <Route path="/login" component={LoginPage} />
+                            </div>
+                        </Router>
+                    </div>
+                </div>
         </div>
-        
+
         <LoginForm />
 
 //------the area below this line should only display if you're logged in. -------
@@ -59,6 +81,11 @@ componentDidMount() {
   }//closing bracket for render
 } //closing bracket for component
 const mapStateToProps = (state) => ({
-  workout: state.program.workout
+  workout: state.program.workout,
+  const { alert } = state;
+  return {
+      alert
+  };
 })
+
 export default connect(mapStateToProps)(App);

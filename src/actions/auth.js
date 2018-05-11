@@ -6,10 +6,10 @@ export const AUTHENTICATION_ERROR = 'authentication_error';
 //specific website that provides authentication
 const URL = '';
 
-export function signInAction({ email, password }, history) {
+export function signInAction({ username, password }, history) {
   return async (dispatch) => {
     try {
-      const res = await router.post(`${URL}/signin`, { email, password });
+      const res = await router.post(`${URL}/signin`, { username, password });
 
       dispatch({ type: AUTHENTICATED });
       localStorage.setItem('user', res.data.token);
@@ -17,7 +17,7 @@ export function signInAction({ email, password }, history) {
     } catch(error) {
       dispatch({
         type: AUTHENTICATION_ERROR,
-        payload: 'Invalid email or password'
+        payload: 'Invalid username or password'
       });
     }
   };

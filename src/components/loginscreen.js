@@ -26,10 +26,10 @@ class LoginForm extends Component {
         <div className="container">
           <h2>Sign In</h2>
           <form onSubmit={ handleSubmit(this.submit) }>
-            <Field name="email"
+            <Field name="username"
                   component="input"
                   type="text"
-                  placeholder="Email"
+                  placeholder="username"
             />
             <Field name="password"
                   component="input"

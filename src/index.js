@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { AUTHENTICATED } from './actions';
+import { AUTHENTICATED } from '/actions/auth.js';
 import {Authentication} from './components/require_auth';
 import Navbar from './components/navbar.js';
 //paths for authentication endpoints. / for login, /secret for what they can

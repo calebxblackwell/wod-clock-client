@@ -60,7 +60,7 @@ class Chrono extends Component {
 
         {(this.state.secondsElapsed !== 0 &&
           this.incrementer !== this.state.lastClearedIncrementer
-          ? <Button onClick={this.handleLabClick.bind(this)}>lab</Button>
+          ? <Button onClick={this.handleLabClick.bind(this)}>lap</Button>
           : null
         )}
 

@@ -5,6 +5,8 @@ import LoginForm from './components/loginscreen.js'
 import Input from './components/input.js'
 import './App.css';
 import { fetchPrograms } from './actions'
+import Navbar from './components/navbar.js'
+
 
 class App extends Component {
   constructor(props){
@@ -44,13 +46,10 @@ componentDidMount() {
           use testuser and testpassword if you don't have a Crossfit Gym.
           </h2>
         </div>
-
+        
         <LoginForm />
 
-        <p className="App-login">
-            Placeholder for API info for Wodify login screen
-
-        </p>
+//------the area below this line should only display if you're logged in. -------
         <p className="App-workout">
             WOD: {this.props.workout}
         </p>

@@ -1,41 +1,58 @@
 import React, { Component } from 'react';
-import Input from './input.js'
+import { Field, reduxForm } from 'redux-form';
 //this screen is the first screen that pops up when you click on the App
 //after logging in to the app, this screen dissapears.
 class LoginForm extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      username: "",
-      password: ""
-    }
-    this.clickHandler = this.clickHandler.bind(this)
-    this.setUsername = this.setUsername.bind(this)
-    this.setPassword = this.setPassword.bind(this)
-  }
+    submit = (values) => {
+        this.props.signInAction(values, this.props.history);
+      }
 
-  setUsername(username) {
-    this.setState({username: username})
   }
-
-  setPassword(password) {
-    this.setState({password: password})
-  }
-
-  clickHandler() {
-    // for now, this just triggers a popup window, just as a smoke test for the click event.
-    alert(`Username: ${this.state.username} Password: ${this.state.password}`)
-  }
-
-  render() {
+      errorMessage() {
+    if (this.props.errorMessage) {
     return (
-      <div>
-        <Input id ="username" labelName="Username: " inputType="text" parentFunction={this.setUsername}  />
-        <Input id ="password" labelName="Password: " inputType="password" parentFunction={this.setPassword} />
-        <button onClick={this.clickHandler}>{this.props.buttonName}Login</button>
+      <div className="info-red">
+        {this.props.errorMessage}
       </div>
-    )
+        );
+      }
   }
+  render() {
+    const { handleSubmit } = this.props;
+    return (
+      <div className="form">
+        <div className="container">
+          <h2>Sign In</h2>
+          <form onSubmit={ handleSubmit(this.submit) }>
+            <Field name="email"
+                  component="input"
+                  type="text"
+                  placeholder="Email"
+            />
+            <Field name="password"
+                  component="input"
+                  type="password"
+                  placeholder="Password"
+            />
+            <button type="submit" className="blue">Sign In</button>
+          </form>
+          {this.errorMessage()}
+        </div>
+      </div>
+    );
+  }
+
+
+}
+function mapStateToProps(state) {
+  return { errorMessage: state.auth.error };
 }
 
-  export default LoginForm
+
+const reduxFormSignin = reduxForm({
+  form: 'signin'
+})(Signin);
+
+export default connect(mapStateToProps, {signInAction})(reduxFormS)

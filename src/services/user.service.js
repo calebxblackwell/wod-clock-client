@@ -1,6 +1,6 @@
 //backend api calls for performing CRUD operations on user data,
 //as well as logging and out of the application
-import { authHeader } from '../_helpers';
+import { authHeader } from '../helpers/auth-header';
 
 export const userService = {
     login,

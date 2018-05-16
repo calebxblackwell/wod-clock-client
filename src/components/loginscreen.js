@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { userActions } from '../_actions';
+import { userActions } from '../actions/user.actions';
 //renders a login form with username and password fields.
 
 class LoginForm extends Component {
@@ -41,7 +41,7 @@ class LoginForm extends Component {
           const { loggingIn } = this.props;
           const { username, password, submitted } = this.state;
           return (
-              <div className="col-md-6 col-md-offset-3">
+              <div className="mainLogin">
                   <h2>Login</h2>
                   <form name="form" onSubmit={this.handleSubmit}>
                       <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
@@ -71,11 +71,12 @@ class LoginForm extends Component {
   }
 
   function mapStateToProps(state) {
+    console.log(state);
       const { loggingIn } = state.authentication;
       return {
           loggingIn
       };
   }
 
-  const connectedLoginPage = connect(mapStateToProps)(LoginPage);
-  export { connectedLoginPage as LoginPage };
+  const connectedLoginPage = connect(mapStateToProps)(LoginForm);
+  export { connectedLoginPage as LoginForm };

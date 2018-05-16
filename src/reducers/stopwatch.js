@@ -7,7 +7,7 @@ const initialState = {
   }]
 };
 
-const trelloReducer = (state=initialState, action) => {
+const stopwatch = (state=initialState, action) => {
   if (action.type === actions.ADD_TIME) {
     return Object.assign({}, state, {
       times: [...state.times, {
@@ -20,4 +20,4 @@ const trelloReducer = (state=initialState, action) => {
 }
 
 
-export default trelloReducer
+export default stopwatch

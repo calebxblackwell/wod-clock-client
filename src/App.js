@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { Router, Route } from 'react-router-dom';
 
-import { history } from '../_helpers';
-import { alertActions } from '../_actions';
-import { PrivateRoute } from '../_components';
-import { HomePage } from '../HomePage';
+import { history } from './helpers/history';
+import { alertActions } from './actions/alert.actions';
+import { PrivateRoute } from './components/PrivateRoute';
 import { LoginForm } from './components/loginscreen.js';
-import {Chrono} from './components/chrono.js'
+import Chrono from './components/chrono.js'
 import './App.css';
-import { fetchPrograms } from '/actions/index.js'
+import { fetchPrograms } from './actions/index.js'
 
 class App extends Component {
   constructor(props){
@@ -41,6 +40,7 @@ componentDidMount() {
 }
 
   render() {
+    
     const {alert} = this.props;
     return (
       <div className="App">
@@ -56,13 +56,13 @@ componentDidMount() {
           </h2>
           <div className="container">
                     <div className="col-sm-8 col-sm-offset-2">
-                        {alert.message &&
+                        {alert &&
                             <div className={`alert ${alert.type}`}>{alert.message}</div>
                         }
                         <Router history={history}>
                             <div>
-                                <PrivateRoute exact path="/" component={HomePage} />
-                                <Route path="/login" component={LoginPage} />
+                                <PrivateRoute exact path="/" component={App} />
+                                <Route path="/login" component={LoginForm} />
                             </div>
                         </Router>
                     </div>
@@ -80,12 +80,11 @@ componentDidMount() {
     );
   }//closing bracket for render
 } //closing bracket for component
+
+//mapStateToProps specifies which part of the state we want to provide to component
 const mapStateToProps = (state) => ({
   workout: state.program.workout,
-  const { alert } = state;
-  return {
-      alert
-  };
+  alert: state.alert
 })
 
 export default connect(mapStateToProps)(App);

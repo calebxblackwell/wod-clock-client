@@ -4,12 +4,12 @@
 //the authentication state is set to an empty object, and during login
 //the authentication state has a loggingIn flag set to true and a user object
 //with the details of the user that is attempting to login.
-import { userConstants } from '../_constants';
+import { userConstants } from '../constants/user.constants';
 
 let user = JSON.parse(localStorage.getItem('user'));
 const initialState = user ? { loggedIn: true, user } : {};
 
-export function authentication(state = initialState, action) {
+const authentication = (state = initialState, action) => {
     switch (action.type) {
     case userConstants.LOGIN_REQUEST:
         return {
@@ -29,3 +29,4 @@ export function authentication(state = initialState, action) {
         return state
     }
 }
+export default authentication

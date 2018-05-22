@@ -2,17 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../actions/user.actions';
- 
+import { registerUser } from '../actions/auth';
 class RegisterPage extends React.Component {
     constructor(props) {
-        super(props);    
+        super(props); 
+          this.handleSubmit = this.handleSubmit.bind(this)   
     }
  
     handleSubmit(event) {
         event.preventDefault();
         const username = event.target.username.value
         const password = event.target.password.value
-        this.props.dispatch(register(username, password));
+        this.props.dispatch(registerUser(username, password));
     }
  
     render() {

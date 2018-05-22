@@ -8,6 +8,7 @@ import { PrivateRoute } from './components/PrivateRoute';
 import { LoginForm } from './components/loginscreen.js';
 import { RegisterPage } from './components/registerscreen.js';
 import  HomePage  from './components/HomePage.js';
+import MainPage from './components/MainPage';
 import Chrono from './components/chrono.js'
 import './App.css';
 import { fetchPrograms } from './actions/index.js'
@@ -50,7 +51,7 @@ componentDidMount() {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/register" component={RegisterPage} />
             <Route exact path="/login" component={LoginForm} />
-
+            <Route exact path="/main" component={MainPage} />
             </div>
         </Router>
     );

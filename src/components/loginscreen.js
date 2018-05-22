@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../actions/user.actions';
 //renders a login form with username and password fields.
+import { loginUser } from '../actions/auth';
 
 class LoginForm extends Component {
   constructor(props) {
     super(props)
 
-          // reset login status
-          this.props.dispatch(logout());
+        this.handleSubmit = this.handleSubmit.bind(this)
       }
 
-      handleSubmit(e) {
+      handleSubmit(event) {
         event.preventDefault();
                 const username = event.target.username.value
                 const password = event.target.password.value
-                this.props.dispatch(login(username, password));
+                this.props.dispatch(loginUser(username, password));
       }
 
       render() {
@@ -33,7 +33,7 @@ class LoginForm extends Component {
                       <div className={'form-group' }>
                           <label htmlFor="password">Password</label>
                          <input type="password" className="form-control" name="password" required />
-                        
+
                       </div>
                       <div className="form-group">
                           <button className="btn btn-primary">Login</button>

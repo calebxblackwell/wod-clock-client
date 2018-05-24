@@ -1,10 +1,18 @@
 import * as actions from '../actions';
 
 
+
 const initialState = {
   times: [{
     time: '12:43'
   }]
+};
+
+
+//this is for the stopwatch functionality
+export const ADD_TIME = "ADD_TIME";
+export const action = {
+  type: ADD_TIME,
 };
 
 const stopwatch = (state=initialState, action) => {

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 //import { userActions } from '../actions/user.actions';
 import { registerUser } from '../actions/auth';
+import './registerscreen.css'
+
 class RegisterPage extends React.Component {
     constructor(props) {
         super(props); 
@@ -19,14 +21,14 @@ class RegisterPage extends React.Component {
     render() {
         
         return (
-            <div className="col-md-6 col-md-offset-3">
-                {//<h2>Register</h2>
-                // <h3> Welcome to WOD Clock! This is an app designed to make your Crossfit
-                // workouts easier by providing your workout of the day information right
-                // next to the stopwatch clock. No more white boards and watching the wall
-                // clock for you! Please feel free to use testuser and testpassword if you don't have a Crossfit Gym.
-                // </h3>
-              }
+            <div className="mainRegister">
+                <h2>Register</h2>
+                <h3> "Welcome to WOD Clock! This is an app designed to make your Crossfit
+                 workouts easier by providing your workout of the day information right
+                 next to the stopwatch clock. No more white boards and watching the wall
+                 clock for you! Please feel free to use testuser and testpassword if you don't have a Crossfit Gym."
+                 </h3>
+
                 <form name="form" onSubmit={this.handleSubmit}>
                     
                     <div className={'form-group'}>

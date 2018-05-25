@@ -1,4 +1,4 @@
-.mainLogin{
+.HomePage{
   font-family: 'Open Sans', sans-serif;
   background:#000000;
   margin: 0 auto 0 auto;
@@ -8,7 +8,7 @@
 }
 
 h2{
-  font-size:12px;
+  font-size:18px;
   text-decoration: none;
   color:#ffffff;
 }
@@ -69,7 +69,7 @@ h3{
   background:#2CC06B;
 }
 
-#btn2{
+.btn2{
   float:left;
   background:#2ecc71;
   width:125px;  padding-top:5px;
@@ -85,6 +85,6 @@ h3{
   font-size:0.8em;
 }
 
-#btn2:hover{
-background:#3594D2;
+.btn2:hover{
+background:#2CC06B;
 }

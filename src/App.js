@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-//import { history } from './helpers/history';
 //import { alertActions } from './actions/alert.actions';
 //import { PrivateRoute } from './components/PrivateRoute';
 import { LoginForm } from './components/loginscreen.js';
 import { RegisterPage } from './components/registerscreen.js';
 import  HomePage  from './components/HomePage.js';
 import MainPage from './components/MainPage';
-//import Chrono from './components/chrono.js'
 import './App.css';
 import { fetchPrograms } from './reducers/program.js'
 
@@ -20,14 +18,9 @@ class App extends Component {
 
     }
   //   this.handleSubmit = this.handleSubmit.bind(this);
-  //   // const { dispatch } = this.props;
-  //   //   history.listen((location, action) => {
-  //   //       // clear alert on location change
-  //   //       dispatch(alertActions.clear());
-  //   //   });
-  //
-  // }
-  //
+  //   const { dispatch } = this.props;
+
+  //}
   // handleSubmit(e) {
   //   e.preventDefault();
   //   this.setState({
@@ -57,8 +50,8 @@ class App extends Component {
 } //closing bracket for component
 
 //mapStateToProps specifies which part of the state we want to provide to component
-const mapStateToProps = (state) => ({
-  workout: state.program.workout,
-})
+const mapStateToProps = (state) => {
+  return {GymProgram: state.GymProgram};
+}
 
 export default connect(mapStateToProps)(App);

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 //import { Link } from 'react-router-dom'
 import Chrono from './chrono.js'
+import './chrono.css'
 //import { fetchPrograms } from '../actions/index.js'
 //import { RECIEVE_WORKOUT } from '../actions/index.js'
 
@@ -9,11 +10,10 @@ const MainPage = (props) => {
   return(
     <div>
       <h1>Main Page</h1>
+      <Chrono  />
       <p className="App-workout">
           WOD: {props.workout}
       </p>
-
-      <Chrono  />
     </div>
   )
 }

@@ -81,7 +81,7 @@ class Chrono extends Component {
   }
 }
 const Button = (props) =>
-  <button type="button" {...props} className={"btn " + props.className } />;
+  <button type="button" {...props} className={"button " + props.className } />;
 
 
 

@@ -32,7 +32,7 @@
 
 .Chrono-lap strong::before { content: 'Lap ' }
 
-.btn {
+.button {
   font-family: inherit;
   font-size: 20px;
 

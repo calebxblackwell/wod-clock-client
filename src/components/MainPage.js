@@ -1,26 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {connect} from 'react-redux'
-//import { Link } from 'react-router-dom'
 import Chrono from './chrono.js'
 import './chrono.css'
-//import { fetchPrograms } from '../actions/index.js'
-//import { RECIEVE_WORKOUT } from '../actions/index.js'
+import { fetchPrograms } from '../reducers/program.js'
 
-const MainPage = (props) => {
+class MainPage extends Component  {
+    constructor(props){
+      super(props);
+      this.state= {
+        
+      }
+    }
+    componentDidMount() {
+        this.props.dispatch(fetchPrograms())
+  }
+
+render() {
   return(
     <div>
       <h1>Main Page</h1>
       <Chrono  />
-      <p className="App-workout">
-          WOD: {props.workout}
+      <p className="GymProgram">
+          WOD: {this.props.GymProgram}
       </p>
     </div>
-  )
+    )
+  }
+};
+//mapStateToProps specifies which part of the state we want to provide to component
+const mapStateToProps = (state) => {
+    return {GymProgram: state.GymProgram};
+
 }
-
-const mapStateToProps = (state) => ({
-  workout: state.program.workout,
-  alert: state.alert
-})
-
 export default connect(mapStateToProps)(MainPage);

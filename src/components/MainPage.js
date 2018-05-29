@@ -3,9 +3,9 @@ import {connect} from 'react-redux'
 import Chrono from './chrono.js'
 import './chrono.css'
 import './MainPage.css'
-import { fetchPrograms } from '../reducers/program.js'
+import fetchPrograms from '../reducers/program.js'
 import program from '../reducers/program.js'
-import programContainer from './ProgramContainer.js'
+import ProgramContainer from './ProgramContainer.js'
 
 class MainPage extends Component  {
     constructor(props){
@@ -24,7 +24,7 @@ render() {
     <div className="MainPage">
       <h2>Main Page</h2>
       <Chrono  />
-      <programContainer />
+      <ProgramContainer />
       // <p className="GymProgram">
       //     WOD: {this.props.GymProgram}
       // </p>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class programContainer extends Component  {
+class ProgramContainer extends Component  {
   constructor(props){
     super(props);
   }
@@ -17,7 +17,7 @@ class programContainer extends Component  {
     )
   }
 }
-export default programContainer
+export default ProgramContainer
 
 
 
@@ -25,5 +25,5 @@ export default programContainer
 //component, like ProgramModule and have it receive the information
 //you want to display for each program as props.
 //Then you need to create a variable called something like `programs` and
-//assign it to `this.props.GymProgram.map(program => 
+//assign it to `this.props.GymProgram.map(program =>
 //return <ProgramModule name='program.name' and so on/>)`

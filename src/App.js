@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { LoginForm } from './components/loginscreen.js';
@@ -7,8 +7,13 @@ import  HomePage  from './components/HomePage.js';
 import MainPage from './components/MainPage';
 import './App.css';
 
-const App = () => {
-
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state= {
+    };
+}
+  render() {
     return (
         <Router >
           <div>
@@ -19,6 +24,6 @@ const App = () => {
             </div>
         </Router>
     );
-
+  }
 }
-export default connect(App);
+export default App;

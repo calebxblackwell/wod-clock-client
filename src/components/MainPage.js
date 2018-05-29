@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import Chrono from './chrono.js'
 import './chrono.css'
+import './MainPage.css'
 import { fetchPrograms } from '../reducers/program.js'
 
 class MainPage extends Component  {
     constructor(props){
       super(props);
       this.state= {
-        
+
       }
     }
     componentDidMount() {
@@ -17,8 +18,8 @@ class MainPage extends Component  {
 
 render() {
   return(
-    <div>
-      <h1>Main Page</h1>
+    <div className="MainPage">
+      <h2>Main Page</h2>
       <Chrono  />
       <p className="GymProgram">
           WOD: {this.props.GymProgram}

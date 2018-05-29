@@ -8,10 +8,11 @@ const HomePage = () => {
       <h2>WOD CLOCK Home Page</h2>
       <form name="form">
       <Link to="/register">
-        <button className="btn">Register</button>
+        <button className="home-button">Register</button>
       </Link>
+      
       <Link to="/login">
-        <button className="btn2">Login</button>
+        <button className="home-button2">Login</button>
       </Link>
       </form>
     </div>

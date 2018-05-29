@@ -23,28 +23,28 @@ class RegisterPage extends React.Component {
         return (
             <div className="mainRegister">
                 <h2>Register</h2>
-                <h3> "Welcome to WOD Clock! This is an app designed to make your Crossfit
+                <h3> Welcome to WOD Clock! This is an app designed to make your Crossfit
                  workouts easier by providing your workout of the day information right
                  next to the stopwatch clock. No more white boards and watching the wall
-                 clock for you! Please feel free to use testuser and testpassword if you don't have a Crossfit Gym."
+                 clock for you! Please feel free to use testuser and testpassword if you don't have a Crossfit Gym.
                  </h3>
 
-                <form name="form" onSubmit={this.handleSubmit}>
+                <form className="form" onSubmit={this.handleSubmit}>
                     
-                    <div className={'form-group'}>
+                    <div>
                         <label htmlFor="username">Username</label>
                         <input type="text" className="form-control" name="username" required />
 
                     </div>
-                    <div className={'form-group' }>
+                    <div>
                         <label htmlFor="password">Password</label>
                         <input type="password" className="form-control" name="password" required />
                        
                     </div>
-                    <div className="form-group">
-                        <button className="btn btn-primary">Register</button>
+                    <div>
+                        <button className="button">Register</button>
                         
-                        <Link to="/login" className="btn btn-link">Cancel</Link>
+                        <Link to="/login" className="cancel-button">Cancel</Link>
                     </div>
                 </form>
             </div>

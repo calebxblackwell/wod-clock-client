@@ -18,7 +18,6 @@ const initialState = {
   GymProgram: null
 }
 const program = (state = initialState, action) => {
-
   switch(action.type) {
     case 'RECIEVE_WORKOUT':
       return{

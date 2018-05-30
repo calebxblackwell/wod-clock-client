@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux'
+//import {connect} from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { LoginForm } from './components/loginscreen.js';
 import { RegisterPage } from './components/registerscreen.js';

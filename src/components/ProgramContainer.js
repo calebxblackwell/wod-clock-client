@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class ProgramContainer extends Component  {
   constructor(props){
@@ -8,22 +8,13 @@ class ProgramContainer extends Component  {
     return(
       <div>
         <ul>
-          {this.props.GymProgram.map((name, id)=> {
-            <li key={id}>""</li>
-          })
-        }
+          {this.props.GymProgram ?
+            this.props.GymProgram.map(
+              program => <ProgramContainer props={program.id}/>) : ''
+            }
         </ul>
       </div>
     )
   }
 }
 export default ProgramContainer
-
-
-
-// So in order to do that I would recommend creating a
-//component, like ProgramModule and have it receive the information
-//you want to display for each program as props.
-//Then you need to create a variable called something like `programs` and
-//assign it to `this.props.GymProgram.map(program =>
-//return <ProgramModule name='program.name' and so on/>)`

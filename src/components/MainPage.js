@@ -25,9 +25,6 @@ render() {
       <h2>Main Page</h2>
       <Chrono  />
       <ProgramContainer />
-      // <p className="GymProgram">
-      //     WOD: {this.props.GymProgram}
-      // </p>
     </div>
     )
   }
@@ -38,3 +35,8 @@ const mapStateToProps = state => {
 
 }
 export default connect(mapStateToProps)(MainPage);
+
+
+// line 27 <p className="GymProgram">
+//     WOD: {this.props.GymProgram}
+// </p>

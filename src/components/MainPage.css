@@ -5,7 +5,7 @@
   padding: 8% 0 0;
   margin: auto;
 }
-.form, .GymProgram {
+.form, ul, li{
   position: relative;
   z-index: 1;
   background: #7C0604;
@@ -59,9 +59,19 @@
 h2 {
  margin: 0 0 15px;
  padding: 0;
+ font-family: "Roboto", sans-serif;
  font-size: 36px;
  font-weight: 300;
  color: #EEC643;
+}
+h3 {
+   margin: 0 0 15px;
+   padding: 0;
+   font-family: "Roboto", sans-serif;
+   font-size: 23px;
+   font-weight: 300;
+   color: #FBFFFE;
+
 }
 /*
 .container {

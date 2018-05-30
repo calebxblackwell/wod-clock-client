@@ -21,7 +21,7 @@ class MainPage extends Component  {
 
 render() {
     let ProgramList = this.props.GymProgram ?
-    this.props.GymProgram.map(program => <ProgramContainer title={program.title} id={program.id}/>) : ''
+    this.props.GymProgram.map(program => <ProgramContainer Name={program.Name} Id={program.Id} Description={program.Description}/>) : ''
   return(
     <div className="MainPage">
       <h2>Main Page</h2>

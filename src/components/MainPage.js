@@ -5,7 +5,7 @@ import './chrono.css'
 import './MainPage.css'
 import {fetchPrograms} from '../reducers/program.js'
 import program from '../reducers/program.js'
-import ProgramContainer from './ProgramContainer.js'
+import {ProgramContainer} from './ProgramContainer.js'
 
 class MainPage extends Component  {
     constructor(props){
@@ -20,11 +20,13 @@ class MainPage extends Component  {
   }
 
 render() {
+    let ProgramList = this.props.GymProgram ?
+    this.props.GymProgram.map(program => <ProgramContainer title={program.title} id={program.id}/>) : ''
   return(
     <div className="MainPage">
       <h2>Main Page</h2>
       <Chrono  />
-      <ProgramContainer />
+      {ProgramList || ''}
     </div>
     )
   }
@@ -35,8 +37,3 @@ const mapStateToProps = state => {
 
 }
 export default connect(mapStateToProps)(MainPage);
-
-
-// line 27 <p className="GymProgram">
-//     WOD: {this.props.GymProgram}
-// </p>

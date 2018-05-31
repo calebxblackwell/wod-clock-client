@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 import Chrono from './chrono.js'
 import './chrono.css'
 import './MainPage.css'
-import {fetchPrograms} from '../reducers/program.js'
-import program from '../reducers/program.js'
+import {fetchPrograms} from '../actions/program.js'
+//import program from '../reducers/program.js'
 import {ProgramContainer} from './ProgramContainer.js'
 
 class MainPage extends Component  {

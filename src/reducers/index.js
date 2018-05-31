@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 import stopwatch from './stopwatch'
-import {fetchPrograms} from './program'
+import {fetchPrograms} from '../actions/program'
 import authentication from './authentication.reducer'
 import program from './program'
 

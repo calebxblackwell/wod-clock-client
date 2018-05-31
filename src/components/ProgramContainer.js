@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 export const ProgramContainer = (props) =>  {
-  console.log(props);
     return(
       <div>
         <ul>

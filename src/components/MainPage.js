@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Chrono from './chrono.js'
 import './chrono.css'
 import './MainPage.css'
+import { Link } from 'react-router-dom'
 import {fetchPrograms} from '../actions/program.js'
 //import program from '../reducers/program.js'
 import {ProgramContainer} from './ProgramContainer.js'
@@ -24,9 +25,12 @@ render() {
     this.props.GymProgram.map(program => <ProgramContainer Name={program.Name} Id={program.Id} Description={program.Description}/>) : ''
   return(
     <div className="MainPage">
-      <h2>Main Page</h2>
+      <h2>3...2...1...GO!</h2>
       <Chrono  />
       {ProgramList || ''}
+      <Link to="/login">
+        <button className="home-button3">Log Out</button>
+      </Link>
     </div>
     )
   }

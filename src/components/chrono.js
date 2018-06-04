@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { saveUserTime } from '../actions/chrono';
 //these are the event listeners for the stopwatch click functions
 //they update the state when given an action.
 const formattedSeconds = (sec) =>
@@ -42,12 +44,12 @@ class Chrono extends Component {
   }
 
   handleLabClick() {
-    this.setState({
-      laps: this.state.laps.concat([this.state.secondsElapsed])
-    })
+    this.props.dispatch(saveUserTime(this.state.secondsElapsed))
+
   }
 
   render() {
+
     return (
       <div className="Chrono">
         <h1 className="Chrono-timer">{formattedSeconds(this.state.secondsElapsed)}</h1>
@@ -83,7 +85,4 @@ class Chrono extends Component {
 const Button = (props) =>
   <button type="button" {...props} className={"button " + props.className } />;
 
-
-
-
-export default Chrono;
+export default connect()(Chrono);

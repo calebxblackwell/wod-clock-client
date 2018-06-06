@@ -74,8 +74,8 @@ class Chrono extends Component {
         )}
 
         <ul className="Chrono-laps">
-          { this.state.laps.map((lap, i) =>
-              <li className="Chrono-lap"><strong>{i + 1}</strong>/ {formattedSeconds(lap)}</li>)
+          { this.state.laps.map((lap, index) =>
+              <li className="Chrono-lap"key={ index }><strong>{index + 1}</strong>/ {formattedSeconds(lap)}</li>)
           }
         </ul>
       </div>

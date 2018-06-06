@@ -1,11 +1,13 @@
 export const saveUserTime = (secondsElapsed) => {
     return () => {
-      fetch('http://localhost:8080/api/auth/login' , {
+      console.log('return saveUserTime');
+      fetch('http://localhost:8080/time' , {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify
-      }).then(res => res.json())
+      }).then(res => console.log(res))
       .then(response => {localStorage.getItem('token')})
       .catch(error => console.log(error))
     }
   }
+//line 8 res.json()

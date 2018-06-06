@@ -1,5 +1,3 @@
-
-
 //this is the ajax request for the workout information from wodify api
 const url = 'https://app.wodify.com/API/WODs_v1.aspx';
 const data = {apiKey: 'FvunGgKZG43ArkOBAs8KoFrT4', date: 'date',
@@ -10,9 +8,7 @@ export const fetchPrograms = () => {
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(data),
-
       headers:{
-        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json'
   }
 })

@@ -43,7 +43,7 @@ class Chrono extends Component {
     });
   }
 
-  handleLabClick() {
+  handleLapClick() {
     this.props.dispatch(saveUserTime(this.state.secondsElapsed))
 
   }
@@ -62,7 +62,7 @@ class Chrono extends Component {
 
         {(this.state.secondsElapsed !== 0 &&
           this.incrementer !== this.state.lastClearedIncrementer
-          ? <Button onClick={this.handleLabClick.bind(this)}>lap</Button>
+          ? <Button onClick={this.handleLapClick.bind(this)}>lap</Button>
           : null
         )}
 

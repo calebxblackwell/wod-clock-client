@@ -1,13 +1,13 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App';
-//
-// //test for main app functionality
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+//test for main app functionality
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
 // //test for api connectivity
 // describe('fetchPrograms', () => {
 //     it('Should dispatch fetchProgramsSuccess', () => {
@@ -31,4 +31,3 @@
 //         });
 //     });
 // });
-// //test for username and login

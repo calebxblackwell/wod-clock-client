@@ -23,23 +23,19 @@ class RegisterPage extends React.Component {
         return (
             <div className="mainRegister">
                 <h2>Register</h2>
-                <h3> Welcome to WOD Clock! This is an app designed to make your Crossfit
+                <p> Welcome to WOD Clock! This is an app designed to make your Crossfit
                  workouts easier by providing your workout of the day information right
                  next to the stopwatch clock. No more white boards and watching the wall
-                 clock for you! Please feel free to use testuser and testpassword if you don't have a Crossfit Gym.
-                 </h3>
-
+                 clock for you! Please feel free to use testuser and testpassword if you dont have a Crossfit Gym.
+                 </p>
                 <form className="form" onSubmit={this.handleSubmit}>
-                    
                     <div>
                         <label htmlFor="username">Username</label>
                         <input type="text" className="form-control" name="username" required />
-
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
                         <input type="password" className="form-control" name="password" required />
-                       
                     </div>
                     <div>
                         <button className="button">Register</button>

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import { userActions } from '../actions/user.actions';
-//renders a login form with username and password fields.
+import { Link } from 'react-router-dom';
 import { loginUser } from '../actions/auth';
 import './loginscreen.css'
+
 class LoginForm extends Component {
   constructor(props) {
     super(props)
@@ -24,17 +23,17 @@ class LoginForm extends Component {
           return (
               <div className="mainLogin">
                   <h2>Login</h2>
-                  <h3> Welcome to WOD Clock! This is an app designed to make your Crossfit
-                   workouts easier by providing your workout of the day information right
-                   next to the stopwatch clock. No more white boards and watching the wall
-                   clock for you! Please feel free to use testuser and testpassword if you don't have a Crossfit Gym.
-                   </h3>
+                  <p>Welcome to WOD Clock! This is an app designed to make your
+                      Crossfit workouts easier by providing your workout of the
+                      day information right next to the stopwatch clock. No more
+                      white boards and watching the wall clock for you! Please
+                      feel free to use testuser and testpassword if you dont 
+                      have a Crossfit Gym.</p>
 
                   <form className="form" onSubmit={this.handleSubmit}>
                       <div>
                           <label htmlFor="username">Username</label>
                            <input type="text" className="form-control" name="username" required />
-
                       </div>
                       <div>
                           <label htmlFor="password">Password</label>
@@ -44,6 +43,7 @@ class LoginForm extends Component {
                       <div>
                           <button className="button">Login</button>
 
+                          <Link to="/register" className="cancel-button">Cancel</Link>
                       </div>
                   </form>
               </div>

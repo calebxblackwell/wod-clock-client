@@ -44,6 +44,11 @@ class Chrono extends Component {
   }
 
   handleLapClick() {
+    const newLaps = [...this.state.laps, this.state.secondsElapsed]
+    this.setState({
+      ...this.state,
+      laps: newLaps
+    })
     this.props.dispatch(saveUserTime(this.state.secondsElapsed))
 
   }
@@ -74,6 +79,7 @@ class Chrono extends Component {
         )}
 
         <ul className="Chrono-laps">
+        <h3>Lap Times</h3>
           { this.state.laps.map((lap, index) =>
               <li className="Chrono-lap"key={ index }><strong>{index + 1}</strong>/ {formattedSeconds(lap)}</li>)
           }

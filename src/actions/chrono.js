@@ -9,4 +9,4 @@ export const saveUserTime = (secondsElapsed) => {
       .then(response => {localStorage.getItem('token')})
       .catch(error => console.log(error))
     }
-  }
+  } 

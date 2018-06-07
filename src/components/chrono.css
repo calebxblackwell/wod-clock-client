@@ -3,15 +3,11 @@
   font-size: 76px;
   font-weight: 100;
   line-height: 160px;
-
   margin: 0;
-
   border: solid #7C0604;
   border-width: 1px 0;
   background-color: #D9D8DC
 }
-
-
 
 .Chrono-lap {
   font-family: "Roboto", sans-serif;
@@ -25,7 +21,6 @@
   color: ##FBFFFE;
   font-size: 20px;
   text-align: right;
-
 }
 
 .Chrono-lap strong {

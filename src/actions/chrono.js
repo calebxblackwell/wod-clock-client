@@ -5,9 +5,8 @@ export const saveUserTime = (secondsElapsed) => {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify
-      }).then(res => console.log(res))
+      }).then(res => res.json())
       .then(response => {localStorage.getItem('token')})
       .catch(error => console.log(error))
     }
   }
-//line 8 res.json()

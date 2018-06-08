@@ -8,7 +8,11 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
-// //test for api connectivity
+//test for api connectivity disabled due to paragraph explanation I wrote
+// in program.js file.
+//thank you.
+
+
 // describe('fetchPrograms', () => {
 //     it('Should dispatch fetchProgramsSuccess', () => {
 //         const program = {

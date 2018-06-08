@@ -27,6 +27,7 @@ render() {
     <div className="MainPage">
       <h2>3...2...1...GO!</h2>
       <Chrono  />
+      <p>Please see notes in program.js for more info about api functionality.</p>
       {ProgramList || ''}
       <Link to="/login">
         <button className="home-button3">Log Out</button>

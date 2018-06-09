@@ -1,14 +1,34 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export const ProgramContainer = (props) =>  {
-    return(
-      <div>
-        <ul>
-            <h2>{props.Name}</h2>
-            <h3>{props.Id}</h3>
-            <h3>{props.Description}</h3>
-        </ul>
-      </div>
-    )
+class ProgramContainer extends Component {
+ constructor(){
+   super();
+   this.state = {
+     wod: []
+   }
+ }
+      componentDidMount(){
+        fetch('/api/wod')
+        .then(results => {
+          return results.json();
+        })
+        .then(data => {
+          let wod = data.results.map(data);
+          this.setState({wod:wod});
+          console.log("state", this.state.wod);
+        })
+        .catch(err => console.log(err));
+
+    }
+
+    render(){
+      return(
+        <div>
+          {this.state.wod}
+        </div>
+      )
+    }
+
 
 }
+export default ProgramContainer

@@ -9,9 +9,8 @@ class ProgramContainer extends Component {
  }
       componentDidMount(){
         fetch('/api/wod')
-        .then(results => {
-          return results.json();
-        })
+        .then(wod => console.log(wod))
+        .then(results => results.json())
         .then(data => {
           let wod = data.results.map(data);
           this.setState({wod:wod});

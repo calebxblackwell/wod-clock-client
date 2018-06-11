@@ -75,6 +75,10 @@ p, label {
    color: #A5A2A7;
 
 }
+.p2 {
+  font-weight: bold;
+  color: black;
+}
 /*
 .container {
   position: relative;

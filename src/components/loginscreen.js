@@ -27,7 +27,7 @@ class LoginForm extends Component {
                       Crossfit workouts easier by providing your workout of the
                       day information right next to the stopwatch clock. No more
                       white boards and watching the wall clock for you! Please
-                      feel free to use testuser and testpassword if you dont 
+                      feel free to use </p> <p className="p2">testuser and testpassword</p> <p> if you dont 
                       have a Crossfit Gym.</p>
 
                   <form className="form" onSubmit={this.handleSubmit}>

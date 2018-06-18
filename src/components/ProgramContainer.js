@@ -1,29 +1,28 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 class ProgramContainer extends Component {
  constructor(){
    super();
    this.state = {
-     wod: []
+     wod: {}
    }
  }
       componentDidMount(){
         fetch('/api/wod')
-        .then(wod => console.log(wod))
-        .then(results => results.json())
+        .then(res => res.json())
         .then(data => {
-          let wod = data.results.map(data);
-          this.setState({wod:wod});
-          console.log("state", this.state.wod);
-        })
-        .catch(err => console.log(err));
+          console.log(data)
+          this.setState({wod:data});
+            setTimeout(() => console.log("state", this.state.wod), 4000)
+          })
+        .catch(err => console.log("err"))
 
     }
 
     render(){
       return(
         <div>
-          {this.state.wod}
+          {this.state.wod.data ? this.state.wod.data : ''}
         </div>
       )
     }

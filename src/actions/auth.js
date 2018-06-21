@@ -1,6 +1,6 @@
 export const registerUser = (username, password) => {
   return () => {
-    fetch(`http://localhost:8080/api/users/register`, {
+    fetch(`https://wodclock.netlify.com`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ export const registerUser = (username, password) => {
 
 export const loginUser = (username, password) => {
   return () => {
-    fetch('http://localhost:8080/api/auth/login', {
+    fetch('https://wodclock.netlify.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
